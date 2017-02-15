@@ -11,7 +11,7 @@
   become_user: root
   with_items:
     - f: ceph.repo
-      d: /etc/yum/repos.d
+      d: /etc/yum.repos.d
       m: 0644
   template:
     src: '{{item.f}}.j2'
