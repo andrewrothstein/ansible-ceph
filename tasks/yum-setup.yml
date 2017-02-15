@@ -9,7 +9,7 @@
 - name: add yum repo conf
   become: yes
   become_user: root
-  with_item:
+  with_items:
     - f: ceph.repo
       d: /etc/yum/repos.d
       m: 0644
