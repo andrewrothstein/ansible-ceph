@@ -1,0 +1,23 @@
+[ceph]
+name=Ceph packages for $basearch
+baseurl={{ceph_dl_url}}/rpm-{{ceph_release}}/{{ceph_yum_distro}}/$basearch
+enabled=1
+priority=2
+gpgcheck=1
+gpgkey={{ceph_key_url}}
+
+[ceph-noarch]
+name=Ceph noarch packages
+baseurl={{ceph_dl_url}}/rpm-{{ceph_release}}/{{ceph_yum_distro}}/noarch
+enabled=1
+priority=2
+gpgcheck=1
+gpgkey={{ceph_key_url}}
+
+[ceph-source]
+name=Ceph source packages
+baseurl={{ceph_dl_url}}/rpm-{{ceph_release}}/{{ceph_yum_distro}}/SRPMS
+enabled=0
+priority=2
+gpgcheck=1
+gpgkey={{ceph_key_url}}

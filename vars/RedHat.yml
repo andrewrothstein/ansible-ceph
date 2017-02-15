@@ -1,0 +1,5 @@
+---
+ceph_pkg_mgr: yum
+ceph_yum_distro: el7
+ceph_pkgs:
+  - ceph

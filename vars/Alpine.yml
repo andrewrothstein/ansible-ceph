@@ -1,0 +1,10 @@
+---
+ceph_pkgs:
+  - ceph
+  - ceph-common
+  - ceph-base
+  - ceph-mon
+  - ceph-mds
+  - ceph-osd
+  - ceph-radosgw
+  - ceph-fuse
