@@ -1,5 +1,6 @@
 andrewrothstein.ceph
 =========
+[![Build Status](https://travis-ci.org/andrewrothstein/ansible-ceph.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-ceph)
 
 Installs the [Ceph](https://ceph.com/) binaries
 
