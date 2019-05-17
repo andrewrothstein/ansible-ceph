@@ -1,27 +1,25 @@
----
+dependencies:
+- role: andrewrothstein.epel
+  version: v1.0.8
 galaxy_info:
   author: Andrew Rothstein
-  description: installs Ceph binaries
   company: BlackRock
+  description: installs Ceph binaries
+  galaxy_tags:
+  - storage
+  - ceph
+  - nfs
+  - san
   license:
-    - MIT
+  - MIT
   min_ansible_version: 2.0
   platforms:
-    - name: EL
-      versions:
-        - all
-    - name: Fedora
-      versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-  galaxy_tags:
-    - storage
-    - ceph
-    - nfs
-    - san
-
-dependencies:
-  - role: andrewrothstein.epel
-    version: v1.0.6
+  - name: EL
+    versions:
+    - all
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
