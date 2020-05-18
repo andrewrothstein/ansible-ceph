@@ -1,5 +1,2 @@
 ---
 ceph_pkg_mgr: apt
-ceph_pkgs:
-  - ceph-fs-common
-  - ceph-common

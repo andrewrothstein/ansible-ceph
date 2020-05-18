@@ -3,17 +3,27 @@
   become: yes
   become_user: root
   rpm_key:
-    key: '{{ceph_key_url}}'
+    key: '{{ ceph_key_url }}'
     state: present
-
-- name: add yum repo conf
-  become: yes
-  become_user: root
+- name: add yum pkgs
   with_items:
-    - f: ceph.repo
-      d: /etc/yum.repos.d
-      m: 0644
-  template:
-    src: '{{item.f}}.j2'
-    dest: '{{item.d}}/{{item.f}}'
-    mode: '{{item.m}}'
+    - name: ceph-basearch
+      description: Ceph packages for $basearch
+      baseurl_suffix: $basearch
+      enabled: yes
+    - name: ceph-noarch
+      description: Ceph noarch packages
+      baseurl_suffix: noarch
+      enabled: yes
+    - name: ceph-srpms
+      description: Ceph source packages
+      baseurl_suffix: SRPMS
+      enabled: no
+  yum_repository:
+    name: '{{ item.name }}'
+    description: '{{ item.description }}'
+    baseurl: '{{ ceph_baseurl_base }}/{{ item.baseurl_suffix }}'
+    enabled: '{{ item.enabled }}'
+    priority: '2'
+    gpgcheck: yes
+    gpgkey: '{{ ceph_key_url }}'

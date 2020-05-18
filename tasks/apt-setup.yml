@@ -3,11 +3,10 @@
   become: yes
   become_user: root
   apt_key:
-    url: '{{ceph_key_url}}'
+    url: '{{ ceph_key_url }}'
     state: present
-
 - name: add apt source...
   become: yes
   become_user: root
   apt_repository:
-    repo: deb {{ceph_dl_url}}/debian-{{ceph_release}}/ {{ansible_distribution_release}} main
+    repo: 'deb {{ ceph_dl_url }}/debian-{{ ceph_release }}/ {{ ansible_distribution_release }} main'

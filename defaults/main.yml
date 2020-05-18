@@ -1,5 +1,5 @@
 ---
 # defaults file for ceph
 ceph_key_url: https://download.ceph.com/keys/release.asc
-ceph_release: luminous
+ceph_release: octopus
 ceph_dl_url: https://download.ceph.com
